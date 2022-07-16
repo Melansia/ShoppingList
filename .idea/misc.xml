@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/mmold/StudioProjects/ShoppingList/app/src/main/res/drawable/ic_add.xml" value="0.2175" />
         <entry key="..\:/Users/mmold/StudioProjects/ShoppingList/app/src/main/res/layout/activity_main.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/mmold/StudioProjects/ShoppingList/app/src/main/res/layout/item_shop_disabled.xml" value="0.25" />
+        <entry key="..\:/Users/mmold/StudioProjects/ShoppingList/app/src/main/res/layout/item_shop_enabled.xml" value="0.19635416666666666" />
       </map>
     </option>
   </component>
