@@ -15,7 +15,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#A68EED92"
+        android:background="#5449AA6F"
         android:orientation="horizontal"
         android:padding="16dp">
 
