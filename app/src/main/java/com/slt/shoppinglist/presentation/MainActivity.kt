@@ -3,12 +3,13 @@ package com.slt.shoppinglist.presentation
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
 import com.slt.shoppinglist.R
 
 class MainActivity : AppCompatActivity() {
 
-    companion object{
+    companion object {
         private const val TAG = "MainActivity"
     }
 
@@ -22,12 +23,7 @@ class MainActivity : AppCompatActivity() {
 
         viewModel = ViewModelProvider(this)[MainViewModel::class.java]
         viewModel.shopList.observe(this) {
-            Log.d(TAG, it.toString())
-            if (count == 0) {
-                count++
-                val item = it[0]
-                viewModel.editShopItem(item)
-            }
+//            Log.d(TAG, it.toString())
         }
     }
 }
