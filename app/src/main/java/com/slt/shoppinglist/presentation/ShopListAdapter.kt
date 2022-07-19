@@ -12,24 +12,17 @@ import com.slt.shoppinglist.domain.ShopItem
 
 class ShopListAdapter : RecyclerView.Adapter<ShopListAdapter.ShopItemViewHolder>() {
 
-    companion object {
-        private const val TAG = "ShopListAdapter"
-        const val VIEW_TYPE_ENABLED = 0
-        const val VIEW_TYPE_DISABLED = 1
-
-        const val MAX_POOL_SIZE = 20
-
-        var count = 0
-    }
-
     var shopList = listOf<ShopItem>()
         set(value) {
             field = value
             notifyDataSetChanged()
         }
 
+    var onShopItemLongClickListener: ((ShopItem) -> Unit)? = null
+    var onShopItemClickListener: ((ShopItem) -> Unit)? = null
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ShopItemViewHolder {
-        Log.i(TAG, "onCreateViewHolder $viewType count: ${count++}")
+        Log.i(TAG, "onCreateViewHolder $viewType count: ${counter++}")
         val layout = when (viewType) {
             VIEW_TYPE_ENABLED -> R.layout.item_shop_enabled
             VIEW_TYPE_DISABLED -> R.layout.item_shop_disabled
@@ -48,7 +41,12 @@ class ShopListAdapter : RecyclerView.Adapter<ShopListAdapter.ShopItemViewHolder>
         Log.i(TAG, "onBindViewHolder $position")
         val shopItem = shopList[position]
         viewHolder.view.setOnLongClickListener {
+            onShopItemLongClickListener?.invoke(shopItem)
             true
+        }
+        viewHolder.view.setOnClickListener {
+            onShopItemClickListener?.invoke(shopItem)
+            Log.i(TAG, "${ShopItem} $position")
         }
         viewHolder.tvName.text = shopItem.name
         viewHolder.tvCount.text = shopItem.count.toString()
@@ -82,5 +80,21 @@ class ShopListAdapter : RecyclerView.Adapter<ShopListAdapter.ShopItemViewHolder>
     class ShopItemViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
         val tvName: TextView = view.findViewById(R.id.tv_name)
         val tvCount: TextView = view.findViewById(R.id.tv_count)
+    }
+
+    interface OnShopItemLingClickListener {
+        fun onShopItemLingClick(shopItem: ShopItem)
+    }
+
+    companion object {
+        private const val TAG = "ShopListAdapter"
+        const val VIEW_TYPE_ENABLED = 0
+        const val VIEW_TYPE_DISABLED = 1
+
+        const val MAX_POOL_SIZE = 20
+        var counter = 0
+    }
+
+    private fun View.callOnClick(function: (ShopItem) -> Unit) {
     }
 }
