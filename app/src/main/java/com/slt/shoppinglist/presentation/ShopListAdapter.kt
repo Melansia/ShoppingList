@@ -82,10 +82,6 @@ class ShopListAdapter : RecyclerView.Adapter<ShopListAdapter.ShopItemViewHolder>
         val tvCount: TextView = view.findViewById(R.id.tv_count)
     }
 
-    interface OnShopItemLingClickListener {
-        fun onShopItemLingClick(shopItem: ShopItem)
-    }
-
     companion object {
         private const val TAG = "ShopListAdapter"
         const val VIEW_TYPE_ENABLED = 0
@@ -95,6 +91,4 @@ class ShopListAdapter : RecyclerView.Adapter<ShopListAdapter.ShopItemViewHolder>
         var counter = 0
     }
 
-    private fun View.callOnClick(function: (ShopItem) -> Unit) {
-    }
 }
