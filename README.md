@@ -28,7 +28,7 @@ The following **extensions** are implemented:
 
 Here's a walk-through of implemented features:
 
-| Before     |
+|            |
 |------------|
 |<img src="https://media.giphy.com/media/nHSwrkl8aKwxcYPdIC/giphy.gif">|
 
