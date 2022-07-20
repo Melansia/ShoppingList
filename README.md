@@ -1,4 +1,4 @@
-# Memory Game
+# Shopping List
 
 ## *Gregory L*
 
