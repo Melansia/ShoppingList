@@ -21,8 +21,8 @@ The following **required** functionality is completed:
 
 The following **extensions** are implemented:
 
-* [ ] Animation
-* [ ] Changed the main UI colors
+* [X] Animation
+* [ ] Custom colors
 
 ## Video Walk-through
 
