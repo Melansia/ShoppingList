@@ -15,9 +15,10 @@ Time spent: **** hours spent in total
 
 The following **required** functionality is completed:
 
-* [X] Adding new items in a scrollable list
+* [ ] Adding new items in a scrollable list
 * [X] Long-press on item to activate or deactivate any item on the list
 * [X] Delete any item with a swipe on left or right
+* [ ] Edit existing items
 
 The following **extensions** are implemented:
 
